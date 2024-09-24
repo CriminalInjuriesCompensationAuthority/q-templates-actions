@@ -55,14 +55,17 @@ module.exports = {
                 {
                     'q-declaration': [123]
                 }
-            ]
+            ],
+            options: {
+                pageContext: 'submission'
+            }
         }
     },
     route: {
         on: {
             ANSWER: [
                 {
-                    target: 'p--confirmation'
+                    target: 'p-declaration'
                 }
             ]
         }
