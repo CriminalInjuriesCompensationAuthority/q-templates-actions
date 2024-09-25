@@ -44,10 +44,17 @@ module.exports = {
                     questionnaireDef: '$.questionnaireDef',
                     logger: '$.logger'
                 }
-            },
+            }
+        ]
+    },
+    onCreate: {
+        id: 'task0',
+        type: 'sequential',
+        retries: 0,
+        data: [
             {
-                id: 'task2',
-                type: 'sendSubmissionMessageToSQS',
+                id: 'task1',
+                type: 'sendNotifyMessageToSQS',
                 retries: 0,
                 data: {
                     questionnaire: '$.questionnaireDef',
@@ -59,7 +66,23 @@ module.exports = {
     meta: {
         questionnaireDocumentVersion: '5.0.0',
         onComplete: {
-            actions: []
+            actions: [
+                {
+                    description: 'Notification email - applicant:adult',
+                    type: 'sendEmail',
+                    // prettier-ignore
+                    data: {
+                        templateId: 'test',
+                        emailAddress:
+                            '||/meta/personalisation/email||',
+                        personalisation: {
+                            caseReference: '1',
+                            content: '2'
+                        },
+                        reference: null
+                    }
+                }
+            ]
         }
     }
 };
