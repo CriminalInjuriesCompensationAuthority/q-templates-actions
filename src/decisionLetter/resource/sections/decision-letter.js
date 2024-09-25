@@ -10,7 +10,7 @@ module.exports = {
             properties: {
                 'decision-letter-info': {
                     title: 'Decision Letter',
-                    description: `<p class="govuk-body">You are not eligible for compensation</p>`
+                    description: `<p class="govuk-body">You are ||/meta/personalisation/first-name|| ||/meta/personalisation/last-name||. You are not eligible for compensation</p>`
                 },
                 'q-accept-decision': {
                     title: 'Do you accept the decision?',

@@ -65,7 +65,7 @@ module.exports = {
         on: {
             ANSWER: [
                 {
-                    target: 'p-declaration'
+                    target: 'p-confirmation'
                 }
             ]
         }
