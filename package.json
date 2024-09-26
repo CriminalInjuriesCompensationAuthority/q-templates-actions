@@ -1,7 +1,7 @@
 {
-    "name": "q-templates-letters",
+    "name": "q-templates-actions",
     "version": "1.0.0",
-    "description": "CICA TCQE letter",
+    "description": "CICA communicaitons with applicants",
     "main": "dist/template.json",
     "engines": {
         "npm": ">=8.5.2",
