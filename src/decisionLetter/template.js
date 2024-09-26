@@ -70,6 +70,7 @@ module.exports = {
                 {
                     description: 'Notification email - applicant:adult',
                     type: 'sendEmail',
+                    cond: ['==', '$.meta.personalisation.contact-method', 'email'],
                     // prettier-ignore
                     data: {
                         templateId: 'test',
