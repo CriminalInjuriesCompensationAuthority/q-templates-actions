@@ -58,14 +58,15 @@ module.exports = {
                 retries: 0,
                 data: {
                     questionnaire: '$.questionnaireDef',
-                    logger: '$.logger'
+                    logger: '$.logger',
+                    type: '$.type'
                 }
             }
         ]
     },
     meta: {
         questionnaireDocumentVersion: '5.0.0',
-        onComplete: {
+        onCreate: {
             actions: [
                 {
                     description: 'Notification email - applicant:adult',
@@ -73,7 +74,27 @@ module.exports = {
                     cond: ['==', '$.meta.personalisation.contact-method', 'email'],
                     // prettier-ignore
                     data: {
-                        templateId: 'test',
+                        templateId: 'test notification',
+                        emailAddress:
+                            '||/meta/personalisation/email||',
+                        personalisation: {
+                            caseReference: '1',
+                            content: '2'
+                        },
+                        reference: null
+                    }
+                }
+            ]
+        },
+        onComplete: {
+            actions: [
+                {
+                    description: 'Confirmation email - applicant:adult',
+                    type: 'sendEmail',
+                    cond: ['==', '$.meta.personalisation.contact-method', 'email'],
+                    // prettier-ignore
+                    data: {
+                        templateId: 'test confirmation',
                         emailAddress:
                             '||/meta/personalisation/email||',
                         personalisation: {
