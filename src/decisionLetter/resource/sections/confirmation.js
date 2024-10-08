@@ -9,8 +9,16 @@ module.exports = {
             additionalProperties: false,
             properties: {
                 confirmation: {
-                    title: 'Confirmation',
-                    description: 'test confirmation'
+                    title: 'Review Requested',
+                    description: `{{ govukPanel({
+                                      titleText: "Review requested",
+                                      html: ''
+                                    })}}
+                                    <h2 class="govuk-heading-m">Next steps</h2>
+                                    <p class="govuk-body">Thank you for asking for a review. We'll consider this adn send a letter to you when we've finished the review.</p>
+                                    <h2 class="govuk-heading-m">Contact us</h2>
+                                    <p class="govuk-body"><a class="govuk-link" href="/contact-us" target="_blank">Contact us if you have any queries</a>.</p>
+                                    `
                 }
             },
             examples: [{}],

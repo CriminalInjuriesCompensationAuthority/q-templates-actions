@@ -9,16 +9,23 @@ module.exports = {
             properties: {
                 'q-request-review': {
                     type: 'string',
-                    title: 'Enter the reasons you would like to request a review',
+                    title: 'Tell us why you want a review',
+                    description:
+                        'Give reasons why our decision should be reviewed. Do not include personal or financial information, like your National Insurance number or credit card details.',
                     maxLength: 2000,
                     errorMessage: {
                         maxLength: 'Reasons for review must be 2000 characters or less'
+                    },
+                    meta: {
+                        classifications: {
+                            theme: 'review-information'
+                        }
                     }
                 }
             },
             errorMessage: {
                 required: {
-                    'q-request-review': 'Enter any additional information'
+                    'q-request-review': 'Enter your reasons for requesting a review'
                 }
             },
             examples: [
@@ -37,7 +44,7 @@ module.exports = {
         on: {
             ANSWER: [
                 {
-                    target: 'p-declaration'
+                    target: 'p-check-your-answers'
                 }
             ]
         }
