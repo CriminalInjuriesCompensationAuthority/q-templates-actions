@@ -32,7 +32,7 @@ module.exports = {
                     <h2 class="govuk-heading-m">What to do next</h2>
                     <p class="govuk-body">If you accept this decision, you do not need to do anything.</p>
                     <p class="govuk-body">If you do <b>not</b> accept this decision, you can request a review.</p>
-                    {% from "components/button/macro.njk" import govukButton %}{{ govukButton({  text: "Request a review", preventDoubleClick: true}) }}
+                    <button type="submit" data-prevent-double-click="true" class="cica-disguised-button"><p class="govuk-body"><a class="govuk-link">Request a review</a></p></button>
                     <h2 class="govuk-heading-s">Download the decision</h2>
                     <p class="govuk-body">To keep a copy of the decision, download or print it.</p>
                     <p class="govuk-body">If you do not do this now, you can sign into your account and download or print it at any time before 11:59pm on ||/meta/personalisation/expiry-date||.</p>
