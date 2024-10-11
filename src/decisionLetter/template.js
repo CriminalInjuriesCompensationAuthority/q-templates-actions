@@ -90,12 +90,11 @@ module.exports = {
                     cond: ['==', '$.meta.personalisation.contact-method', 'email'],
                     // prettier-ignore
                     data: {
-                        templateId: 'test notification',
+                        templateId: '71671c4f-5cbd-4c7d-b793-254d56d13e51',
                         emailAddress:
                             '||/meta/personalisation/email||',
                         personalisation: {
-                            caseReference: '1',
-                            content: '2'
+                            caseReference: '||/answers/system/case-reference||'
                         },
                         reference: null
                     }
