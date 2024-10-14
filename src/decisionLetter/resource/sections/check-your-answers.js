@@ -29,7 +29,8 @@ module.exports = {
                 }
             ],
             options: {
-                pageContext: 'submission'
+                pageContext: 'submission',
+                buttonText: 'Accept and send'
             }
         }
     },
