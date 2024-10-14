@@ -32,7 +32,7 @@ module.exports = {
         on: {
             ANSWER: [
                 {
-                    target: 'p-request-review-reasons'
+                    target: 'p-request-review'
                 }
             ]
         }

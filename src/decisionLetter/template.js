@@ -6,10 +6,10 @@ const checkYourAnswers = require('./resource/sections/check-your-answers.js');
 const confirmation = require('./resource/sections/confirmation.js');
 const contextRequestReview = require('./resource/sections/context-request-review.js');
 const contextSendingEvidence = require('./resource/sections/context-sending-evidence.js');
-const decisionLetter = require('./resource/sections/decision-letter.js');
+const decision = require('./resource/sections/decision.js');
 const declaration = require('./resource/sections/declaration.js');
 const doYouHaveSupportingEvidence = require('./resource/sections/do-you-have-supporting-evidence.js');
-const requestReviewReasons = require('./resource/sections/request-review-reasons.js');
+const requestReview = require('./resource/sections/request-review.js');
 
 module.exports = {
     type: 'decisionletter',
@@ -19,13 +19,13 @@ module.exports = {
         'p--confirmation': confirmation.section,
         'p--context-request-review': contextRequestReview.section,
         'p--context-sending-evidence': contextSendingEvidence.section,
-        'p-decision-letter': decisionLetter.section,
+        'p-decision': decision.section,
         'p-do-you-have-supporting-evidence': doYouHaveSupportingEvidence.section,
-        'p-request-review-reasons': requestReviewReasons.section,
+        'p-request-review': requestReview.section,
         'p-declaration': declaration.section
     },
     routes: {
-        initial: 'p-decision-letter',
+        initial: 'p-decision',
         referrer: 'https://www.gov.uk/claim-compensation-criminal-injury/make-claim',
         confirmation: 'p--confirmation',
         summary: ['p-check-your-answers'],
@@ -34,14 +34,14 @@ module.exports = {
             'p--confirmation': confirmation.route,
             'p--context-request-review': contextRequestReview.route,
             'p--context-sending-evidence': contextSendingEvidence.route,
-            'p-decision-letter': decisionLetter.route,
+            'p-decision': decision.route,
             'p-do-you-have-supporting-evidence': doYouHaveSupportingEvidence.route,
-            'p-request-review-reasons': requestReviewReasons.route,
+            'p-request-review': requestReview.route,
             'p-declaration': declaration.route
         }
     },
     answers: {},
-    progress: ['p-decision-letter'],
+    progress: ['p-decision'],
     taxonomies: {
         theme: {
             taxa: {review: {}}

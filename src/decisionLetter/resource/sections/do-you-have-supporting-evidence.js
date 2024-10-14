@@ -63,7 +63,7 @@ module.exports = {
                     ]
                 },
                 {
-                    target: 'p-request-review-reasons'
+                    target: 'p-request-review'
                 }
             ]
         }
